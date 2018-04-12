@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'index' => 'home#index'
+  get 'menu' => 'home#menu'
 
   get 'contact_us' => 'home#contact_us'
 
