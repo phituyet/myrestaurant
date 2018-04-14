@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def contact_us
   end
 
+  
   def menu
     @sections = Section.all
   end
