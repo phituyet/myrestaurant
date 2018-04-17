@@ -28,7 +28,8 @@
 
   <div class="field">
     <%= form.label :section_id %>
-    <%= form.text_field :section_id, id: :food_item_section_id %>
+    <!--use reject to remove a object of map-->
+    <%= form.select :section_id, Section.all.reject{|e| (e.name === "All")}.map{|e| [e.name, e.id]} %>
   </div>
 
   <div class="field">
