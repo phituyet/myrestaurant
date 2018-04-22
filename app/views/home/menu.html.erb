@@ -4,3 +4,29 @@
     <%= link_to section.name, menu_path(section_name: section.name), class: "btn #{params[:section_name] == section.name ? 'btn-primary' : 'btn-secondary'}"%>
   <% end %>
 </div>
+
+<% if @current_section %>
+  <table class="table">
+    <thread>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thread>
+    <div class="tbody">
+    asd <%= @current_section.food_items.count %>
+      <%if @current_section.food_items.count > 0 %>
+        <% @current_section.food_items.each do |item|%>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= number_to_currency item.price %></td>
+          <td><%= item.image_url%></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </div>
+  </table>
+<% else %>
+  <div class="alert alert-info">Please select a section</div>
+<% end %>
