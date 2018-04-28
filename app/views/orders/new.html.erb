@@ -1,0 +1,13 @@
+<h1>Order for <%= @item.name %></h1>
+
+<%
+=begin %>
+<%= form_for @order do |f| %>
+  <div class="form-group">
+    <%= f.label :quantity%>
+    <%= f.number_field :quantity, class: 'form-control'%>
+  </div>
+  <%= f.submit nil, class: 'btn btn-primary'%>
+<%end%>>
+<%
+=end %>
